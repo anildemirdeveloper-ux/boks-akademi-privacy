@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>Beyaz Kıyamet | Gizlilik Politikası</title>
+<style>
+:root { color-scheme:dark; }
+* { box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; max-width:850px; margin:auto; padding:28px 20px 60px; line-height:1.75; background:#0b1725; color:#e4edf5; }
+h1 { color:#e8f7ff; font-size:clamp(1.65rem,4vw,2.3rem); line-height:1.3; }
+h2 { color:#8bd5f5; font-size:1.2rem; margin-top:30px; }
+.subtitle { color:#a7bdce; margin-top:-6px; }
+.lang-switch { display:flex; gap:10px; flex-wrap:wrap; margin:26px 0; }
+button { background:#1b3348; color:#e4edf5; border:1px solid #3b5c73; padding:10px 18px; border-radius:8px; cursor:pointer; font-size:1rem; }
+button[aria-pressed="true"] { background:#a5e4fa; color:#092033; border-color:#a5e4fa; font-weight:700; }
+.container { display:none; }
+.container.active { display:block; }
+a { color:#a5e4fa; overflow-wrap:anywhere; }
+footer { border-top:1px solid #344d61; margin-top:36px; padding-top:15px; color:#a7bdce; font-size:.9rem; }
+</style>
+<script>
+const labels = {
+ tr:{heading:"Gizlilik Politikası",subtitle:"BEYAZ KIYAMET"},
+ en:{heading:"Privacy Policy",subtitle:"BEYAZ KIYAMET"},
+ de:{heading:"Datenschutzerklärung",subtitle:"BEYAZ KIYAMET"}
+};
+function switchLang(lang) {
+ if (!labels[lang]) lang="tr";
+ document.querySelectorAll(".container").forEach(el=>el.classList.toggle("active",el.id===lang));
+ document.querySelectorAll(".lang-switch button").forEach(el=>el.setAttribute("aria-pressed",String(el.dataset.lang===lang)));
+ document.documentElement.lang=lang;
+ document.getElementById("page-title").textContent=labels[lang].heading;
+ document.getElementById("page-subtitle").textContent=labels[lang].subtitle;
+ document.title=labels[lang].heading+" - Beyaz Kıyamet";
+ try {localStorage.setItem("privacy-language",lang);}catch(e){}
+}
+document.addEventListener("DOMContentLoaded",()=>{
+ let saved;
+ try {saved=localStorage.getItem("privacy-language");}catch(e){}
+ const browser=(navigator.language||"tr").slice(0,2).toLowerCase();
+ switchLang(saved||(["tr","en","de"].includes(browser)?browser:"en"));
+});
+</script>
+</head>
+<body>
+<header>
+<h1 id="page-title">Gizlilik Politikası</h1>
+<p id="page-subtitle" class="subtitle">BEYAZ KIYAMET</p>
+<nav class="lang-switch" aria-label="Language / Dil / Sprache">
+<button type="button" data-lang="tr" onclick="switchLang('tr')" aria-pressed="true">Türkçe</button>
+<button type="button" data-lang="en" onclick="switchLang('en')" aria-pressed="false">English</button>
+<button type="button" data-lang="de" onclick="switchLang('de')" aria-pressed="false">Deutsch</button>
+</nav>
+</header>
+<main>
+<section id="tr" class="container active" lang="tr">
+<h2>Yürürlük Tarihi: 28 Ekim 2026</h2>
+<p>Bu Gizlilik Politikası, Anıl Demir tarafından geliştirilen <strong>Beyaz Kıyamet</strong> adlı mobil oyun için geçerlidir.</p>
+<h2>Toplanan Bilgiler</h2>
+<p>Beyaz Kıyamet, geliştirici tarafından doğrudan kişisel bilgi toplanmasını gerektirmeyecek şekilde tasarlanmıştır. Oyun, kullanıcı hesabı oluşturulmasını veya ad, e-posta adresi ya da telefon numarası verilmesini istemez.</p>
+<h2>Oyun Verileri</h2>
+<p>Hikâyedeki seçimler, kaydedilen ilerleme, açılan bölümler, dil tercihleri ve diğer oyun ayarları cihaz üzerinde yerel olarak saklanabilir. Bu veriler oyunun çalışması ve kaldığınız yerden devam edebilmeniz için kullanılır; geliştiricinin sunucularına gönderilmez.</p>
+<h2>İnternet Bağlantısı ve Harici Bağlantılar</h2>
+<p>Oyunun temel hikâye deneyimi internet bağlantısı gerektirmez. Oyunda App Store sayfalarını açan bağlantılar bulunması durumunda, bu bağlantıları kullandığınızda Apple'ın gizlilik politikası ve koşulları geçerli olabilir.</p>
+<h2>Uygulama İçi Satın Alımlar</h2>
+<p>Bu politika, oyun içi satın alma veya ödeme özelliği bulunduğunu varsaymaz. Oyuna ileride gerçek parayla satın alma özelliği eklenirse ilgili ödeme işlemleri ve veri uygulamaları bu politikada açıklanacaktır.</p>
+<h2>Üçüncü Taraf Hizmetler</h2>
+<p>Oyun, geliştirici tarafından entegre edilmiş üçüncü taraf reklam, kullanıcı izleme veya analiz hizmetleri içermeyecek şekilde tasarlanmıştır. App Store gibi Apple hizmetlerine yönlendirme yapılırsa, Apple'ın kendi veri işleme uygulamaları geçerli olabilir.</p>
+<h2>Veri Paylaşımı ve Takip</h2>
+<p>Geliştirici, oyun aracılığıyla kişisel verileri satmaz veya hedefli reklam amacıyla kullanıcıları uygulamalar ve web siteleri arasında takip etmez.</p>
+<h2>Çocukların Gizliliği</h2>
+<p>Oyun, çocuklardan veya diğer kullanıcılardan bilerek kişisel bilgi talep etmez.</p>
+<h2>Veri Güvenliği ve Silme</h2>
+<p>Yerel kayıtların korunması, cihazın güvenlik ayarlarına da bağlıdır. Oyunun kaldırılması yerel kayıtların silinmesine neden olabilir; ancak cihaz yedekleri ayrı şekilde saklanabilir. Geliştiriciye gönderilmeyen yerel oyun verilerine geliştirici tarafından erişilemez.</p>
+<h2>Politika Değişiklikleri</h2>
+<p>Bu politika, oyunun özellikleri veya geçerli yasal gereklilikler değiştiğinde güncellenebilir. Güncel metin bu sayfada yayımlanır.</p>
+<h2>İletişim</h2>
+<p>Gizlilikle ilgili sorularınız için: <a href="mailto:anildemir4793@gmail.com">anildemir4793@gmail.com</a></p>
+</section>
+<section id="en" class="container" lang="en">
+<h2>Effective Date: October 28, 2026</h2>
+<p>This Privacy Policy applies to <strong>Beyaz Kıyamet</strong>, a mobile game developed by Anıl Demir.</p>
+<h2>Information We Collect</h2>
+<p>Beyaz Kıyamet is designed not to require the developer to collect personal information directly. The game does not require users to create an account or provide a name, email address, or phone number.</p>
+<h2>Game Data</h2>
+<p>Story choices, saved progress, unlocked chapters, language preferences, and other settings may be stored locally on your device. This information is used to operate the game and let you continue your story. It is not transmitted to the developer's servers.</p>
+<h2>Internet Connection and External Links</h2>
+<p>The core story experience does not require an internet connection. If the game includes links to App Store pages, Apple's privacy policy and terms may apply when you use those links.</p>
+<h2>In-App Purchases</h2>
+<p>This policy does not assume that the game offers in-app purchases or payment features. If real-money purchases are added in the future, this policy will be updated to describe the relevant payment processing and data practices.</p>
+<h2>Third-Party Services</h2>
+<p>The game is designed without developer-integrated third-party advertising, user tracking, or analytics services. If you open an Apple service such as the App Store, Apple's own data practices may apply.</p>
+<h2>Data Sharing and Tracking</h2>
+<p>The developer does not sell personal information through the game or track users across apps and websites for targeted advertising.</p>
+<h2>Children's Privacy</h2>
+<p>The game does not knowingly request personal information from children or other users.</p>
+<h2>Data Security and Deletion</h2>
+<p>Protecting locally stored game data also depends on your device's security settings. Uninstalling the game may delete local saves, although device backups may retain copies. The developer cannot access local game data that has not been transmitted.</p>
+<h2>Changes to This Policy</h2>
+<p>This policy may be updated when game features or applicable legal requirements change. The current version will be published on this page.</p>
+<h2>Contact</h2>
+<p>For privacy-related questions, contact: <a href="mailto:anildemir4793@gmail.com">anildemir4793@gmail.com</a></p>
+</section>
+<section id="de" class="container" lang="de">
+<h2>Gültig ab: 28. Oktober 2026</h2>
+<p>Diese Datenschutzerklärung gilt für <strong>Beyaz Kıyamet</strong>, ein von Anıl Demir entwickeltes Mobilspiel.</p>
+<h2>Welche Informationen wir erfassen</h2>
+<p>Beyaz Kıyamet ist so konzipiert, dass der Entwickler keine personenbezogenen Daten direkt erheben muss. Für das Spiel sind weder die Erstellung eines Benutzerkontos noch die Angabe von Name, E-Mail-Adresse oder Telefonnummer erforderlich.</p>
+<h2>Spieldaten</h2>
+<p>Entscheidungen im Handlungsverlauf, gespeicherte Spielfortschritte, freigeschaltete Kapitel, Spracheinstellungen und weitere Einstellungen können lokal auf Ihrem Gerät gespeichert werden. Diese Daten dienen dem Spielbetrieb und ermöglichen es Ihnen, die Geschichte fortzusetzen. Sie werden nicht an Server des Entwicklers übertragen.</p>
+<h2>Internetverbindung und externe Links</h2>
+<p>Für das grundlegende Spielerlebnis ist keine Internetverbindung erforderlich. Falls das Spiel Links zu Seiten im App Store enthält, können bei deren Nutzung die Datenschutzbestimmungen und Nutzungsbedingungen von Apple gelten.</p>
+<h2>In-App-Käufe</h2>
+<p>Diese Erklärung setzt nicht voraus, dass das Spiel In-App-Käufe oder Zahlungsfunktionen anbietet. Sollten künftig Käufe mit echtem Geld hinzugefügt werden, wird diese Erklärung um Angaben zur Zahlungsabwicklung und zur entsprechenden Datenverarbeitung ergänzt.</p>
+<h2>Dienste von Drittanbietern</h2>
+<p>Das Spiel ist so konzipiert, dass keine vom Entwickler integrierten Dienste von Drittanbietern für Werbung, Nutzerverfolgung oder Analysen eingesetzt werden. Beim Öffnen von Apple-Diensten wie dem App Store können die Datenschutzpraktiken von Apple gelten.</p>
+<h2>Datenweitergabe und Tracking</h2>
+<p>Der Entwickler verkauft über das Spiel keine personenbezogenen Daten und verfolgt Nutzer nicht app- oder websiteübergreifend für zielgerichtete Werbung.</p>
+<h2>Datenschutz von Kindern</h2>
+<p>Das Spiel fordert wissentlich weder von Kindern noch von anderen Nutzern personenbezogene Daten an.</p>
+<h2>Datensicherheit und Löschung</h2>
+<p>Der Schutz lokal gespeicherter Spieldaten hängt auch von den Sicherheitseinstellungen Ihres Geräts ab. Bei der Deinstallation können lokale Spielstände gelöscht werden; Gerätesicherungen können jedoch Kopien enthalten. Der Entwickler kann nicht auf lokale Spieldaten zugreifen, die nicht übertragen wurden.</p>
+<h2>Änderungen dieser Datenschutzerklärung</h2>
+<p>Diese Erklärung kann aktualisiert werden, wenn sich Spielfunktionen oder geltende gesetzliche Anforderungen ändern. Die jeweils aktuelle Fassung wird auf dieser Seite veröffentlicht.</p>
+<h2>Kontakt</h2>
+<p>Bei Fragen zum Datenschutz kontaktieren Sie uns unter: <a href="mailto:anildemir4793@gmail.com">anildemir4793@gmail.com</a></p>
+</section>
+</main>
+<footer>© 2026 Anıl Demir · Beyaz Kıyamet</footer>
+</body>
+</html>
